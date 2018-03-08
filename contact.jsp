@@ -39,18 +39,6 @@
 			</div>
 		</div>
 
-		<!-- Map Container -->
-
-		<div class="row">
-			<div class="col">
-				<div id="google_map">
-					<div class="map_container">
-						<div id="map"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<!-- Contact Us -->
 
 		<div class="row">
@@ -60,11 +48,8 @@
 					<h1>Contact Us</h1>
 					<p>There are many ways to contact us. You may drop us a line, give us a call or send an email, choose what suits you the most.</p>
 					<div>
-						<p>(800) 686-6688</p>
-						<p>info.deercreative@gmail.com</p>
-					</div>
-					<div>
-						<p>mm</p>
+						<p>(000) 000-000</p>
+						<p>support@ncore.com</p>
 					</div>
 					<div>
 						<p>Open hours: 8.00-18.00 Mon-Fri</p>
@@ -89,7 +74,7 @@
 			<div class="col-lg-6 get_in_touch_col">
 				<div class="get_in_touch_contents">
 					<h1>Get In Touch With Us!</h1>
-					<p>Fill out the form below to recieve a free and confidential.</p>
+					<p>Fill out the form below to recieve a call.</p>
 					<form action="post">
 						<div>
 							<input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
