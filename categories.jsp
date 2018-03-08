@@ -4,7 +4,7 @@
 <title>Categories</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Ncore Categories">
+<meta name="description" content="Ncore categories_styles">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -45,12 +45,17 @@
 						<ul class="sidebar_categories">
 							<%
 								Statement stmt = con.createStatement();
+								String cat = request.getParameter("category");
 								String s = "Select * from productcategories";
 								ResultSet rs = stmt.executeQuery(s);
 								String pp = "";
+
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
-									out.println("<li><a href='#'>"+ pp + "</a></li>");
+									if(pp.equals(cat)){
+										out.println("<li class='active'><a href='categories.jsp?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+									}
+									else out.println("<li><a href='categories.jsp?category="+ pp + "'>"+ pp + "</a></li>");
 								}
 								
 							%>
@@ -79,15 +84,20 @@
 									<%
 										int count = 0;
 										String s2 = "SELECT DISTINCT a.ArtisanFirstName, a.ArtisanLastName, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
+										if(cat!=null){
+											s2 += " AND pc.CategoryName = '" + cat + "'";
+										}
 										ResultSet rs2 = stmt.executeQuery(s2);
 										ResultSetMetaData rsmd=rs2.getMetaData();  
 										String fname = "";
 										String lname = "";
+										String category = "";
 										while(rs2.next()){
 											count += 1;
 											fname = rs2.getString("ArtisanFirstName");
 											lname = rs2.getString("ArtisanLastName");
-											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + fname + " " + lname + "</a></h6><div class='product_price' style='color:#fe4c50'>"+((int)(Math.random()*5)+1)+"&#x2605;</div></div></div><div class='red_button add_to_cart_button'><a href='#'>add to cart</a></div></div>");
+											category = rs2.getString("CategoryName");
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='favorite favorite_left'></div><div class='product_info'><h4 class='product_name'><a href=#>" + fname + " " + lname + "</a><h6>"+ category +"</h6></h4><div class='product_price' style='color:#fe4c50'>"+((int)(Math.random()*5)+1)+"&#x2605;</div></div></div><div class='red_button add_to_cart_button'><a href='#'>View Profile</a></div></div>");
 										}
 
 									%>

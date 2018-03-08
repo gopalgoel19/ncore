@@ -42,9 +42,9 @@
 					<nav class="navbar">
 						<ul class="navbar_menu">
 							<li><a href="index.jsp">home</a></li>
-							<li><a href="#">about</a></li>
-							<li><a href="categories.jsp">products</a></li>
-							<li><a href="#">artisans</a></li>
+							<li><a href="index.jsp">about</a></li>
+							<li><a href="categories.jsp">categories</a></li>
+							<li><a href="categories.jsp">artisans</a></li>
 							<li><a href="contact.jsp">contact</a></li>
 						</ul>
 						<ul class="navbar_user">
