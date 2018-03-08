@@ -45,21 +45,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp">dokra items</a>
+							<a href="categories.jsp?category=Dokra">dokra items</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp">wodden dolls</a>
+							<a href="categories.jsp?category=Wodden Doll">wodden dolls</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp">patachirtra</a>
+							<a href="categories.jsp?category=Patachirtra">patachirtra</a>
 						</div>
 					</div>
 				</div>
