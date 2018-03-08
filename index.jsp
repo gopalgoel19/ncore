@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Colo Shop</title>
+<title>NCore</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Colo Shop Template">
+<meta name="description" content="N Core Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -85,16 +85,16 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">colo<span>shop</span></a>
+							<a href="index.jsp">n<span>core</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
-								<li><a href="#">home</a></li>
+								<li><a href="index.jsp">home</a></li>
 								<li><a href="#">shop</a></li>
 								<li><a href="#">promotion</a></li>
 								<li><a href="#">pages</a></li>
 								<li><a href="#">blog</a></li>
-								<li><a href="contact.html">contact</a></li>
+								<li><a href="contact.jsp">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
@@ -190,21 +190,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">women's</a>
+							<a href="categories.jsp">women's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">accessories's</a>
+							<a href="categories.jsp">accessories's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">men's</a>
+							<a href="categories.jsp">men's</a>
 						</div>
 					</div>
 				</div>
@@ -249,7 +249,7 @@
 								<div class="favorite favorite_left"></div>
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 									<div class="product_price">$520.00<span>$590.00</span></div>
 								</div>
 							</div>
@@ -266,7 +266,7 @@
 								<div class="favorite"></div>
 								<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 									<div class="product_price">$610.00</div>
 								</div>
 							</div>
@@ -282,7 +282,7 @@
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Blue Yeti USB Microphone Blackout Edition</a></h6>
 									<div class="product_price">$120.00</div>
 								</div>
 							</div>
@@ -299,7 +299,7 @@
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+									<h6 class="product_name"><a href="single.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 									<div class="product_price">$410.00</div>
 								</div>
 							</div>
@@ -315,7 +315,7 @@
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Pryma Headphones, Rose Gold & Grey</a></h6>
 									<div class="product_price">$180.00</div>
 								</div>
 							</div>
@@ -332,7 +332,7 @@
 								<div class="favorite favorite_left"></div>
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<h6 class="product_name"><a href="#single.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 									<div class="product_price">$520.00<span>$590.00</span></div>
 								</div>
 							</div>
@@ -348,7 +348,7 @@
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 									<div class="product_price">$610.00</div>
 								</div>
 							</div>
@@ -364,7 +364,7 @@
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Blue Yeti USB Microphone Blackout Edition</a></h6>
 									<div class="product_price">$120.00</div>
 								</div>
 							</div>
@@ -381,7 +381,7 @@
 								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 								<div class="favorite favorite_left"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+									<h6 class="product_name"><a href="single.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 									<div class="product_price">$410.00</div>
 								</div>
 							</div>
@@ -397,7 +397,7 @@
 								</div>
 								<div class="favorite"></div>
 								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<h6 class="product_name"><a href="single.jsp">Pryma Headphones, Rose Gold & Grey</a></h6>
 									<div class="product_price">$180.00</div>
 								</div>
 							</div>
@@ -476,7 +476,7 @@
 										<div class="favorite favorite_left"></div>
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 											<div class="product_price">$520.00<span>$590.00</span></div>
 										</div>
 									</div>
@@ -494,7 +494,7 @@
 										<div class="favorite"></div>
 										<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 											<div class="product_price">$610.00</div>
 										</div>
 									</div>
@@ -511,7 +511,7 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Blue Yeti USB Microphone Blackout Edition</a></h6>
 											<div class="product_price">$120.00</div>
 										</div>
 									</div>
@@ -529,7 +529,7 @@
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+											<h6 class="product_name"><a href="single.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 											<div class="product_price">$410.00</div>
 										</div>
 									</div>
@@ -546,7 +546,7 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Pryma Headphones, Rose Gold & Grey</a></h6>
 											<div class="product_price">$180.00</div>
 										</div>
 									</div>
@@ -564,7 +564,7 @@
 										<div class="favorite favorite_left"></div>
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 											<div class="product_price">$520.00<span>$590.00</span></div>
 										</div>
 									</div>
@@ -581,7 +581,7 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 											<div class="product_price">$610.00</div>
 										</div>
 									</div>
@@ -598,7 +598,7 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Blue Yeti USB Microphone Blackout Edition</a></h6>
 											<div class="product_price">$120.00</div>
 										</div>
 									</div>
@@ -616,7 +616,7 @@
 										<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 										<div class="favorite favorite_left"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
+											<h6 class="product_name"><a href="single.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 											<div class="product_price">$410.00</div>
 										</div>
 									</div>
@@ -633,7 +633,7 @@
 										</div>
 										<div class="favorite"></div>
 										<div class="product_info">
-											<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+											<h6 class="product_name"><a href="single.jsp">Pryma Headphones, Rose Gold & Grey</a></h6>
 											<div class="product_price">$180.00</div>
 										</div>
 									</div>
@@ -779,7 +779,7 @@
 						<ul class="footer_nav">
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">FAQs</a></li>
-							<li><a href="contact.html">Contact us</a></li>
+							<li><a href="contact.jsp">Contact us</a></li>
 						</ul>
 					</div>
 				</div>
