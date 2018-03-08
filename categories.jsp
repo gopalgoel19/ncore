@@ -46,14 +46,13 @@
 							<%
 								Statement stmt = con.createStatement();
 								String s = "Select * from productcategories";
-								String s2 = "SELECT DISTINCT a.ArtisanFirstName, a.ArtisanLastName, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
 								ResultSet rs = stmt.executeQuery(s);
 								String pp = "";
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
 									out.println("<li><a href='#'>"+ pp + "</a></li>");
 								}
-								ResultSet rs2 = stmt.executeQuery(s2);
+								
 							%>
 							<!-- 
 							li><a href="#">Home Decor</a></li>
@@ -165,97 +164,47 @@
 								</div> -->
 
 								<div class="product-grid">
+
+									<%
+										int count = 0;
+										String s2 = "SELECT DISTINCT a.ArtisanFirstName, a.ArtisanLastName, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
+										ResultSet rs2 = stmt.executeQuery(s2);
+										ResultSetMetaData rsmd=rs2.getMetaData();  
+										String fname = "";
+										String lname = "";
+										while(rs2.next()){
+											count += 1;
+											fname = rs2.getString("ArtisanFirstName");
+											lname = rs2.getString("ArtisanLastName");
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + fname + " " + lname + "</a></h6><div class='product_price' style='color:#fe4c50'>"+((int)(Math.random()*5)+1)+"&#x2605;</div></div></div><div class='red_button add_to_cart_button'><a href='#'>add to cart</a></div></div>");
+										}
+
+									%>
+
+
 									<!-- Product 1 -->
 
-									<div class="product-item men">
+									<!-- <div class="product-item men">
 										<div class="product discount product_filter">
-											<!-- <div class="product_image">
+											<div class="product_image">
 												<img src="images/product_1.png" alt="">
-											</div> -->
+											</div>
 											<div class="favorite favorite_left"></div>
-											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.jsp">Sukla Das</a></h6>
 												<div class="product_price">5&#x2605;</div>
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 1 -->
-
-									<div class="product-item men">
-										<div class="product discount product_filter">
-											<!-- <div class="product_image">
-												<img src="images/product_1.png" alt="">
-											</div> -->
-											<div class="favorite favorite_left"></div>
-											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.jsp">Asha Lata Mondal</a></h6>
-												<div class="product_price">4&#x2605;</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 1 -->
-
-									<div class="product-item men">
-										<div class="product discount product_filter">
-											<!-- <div class="product_image">
-												<img src="images/product_1.png" alt="">
-											</div> -->
-											<div class="favorite favorite_left"></div>
-											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.jsp">Sukla Das</a></h6>
-												<div class="product_price">5&#x2605;</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 1 -->
-
-									<div class="product-item men">
-										<div class="product discount product_filter">
-											<!-- <div class="product_image">
-												<img src="images/product_1.png" alt="">
-											</div> -->
-											<div class="favorite favorite_left"></div>
-											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.jsp">Sukla Das</a></h6>
-												<div class="product_price">5&#x2605;</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 1 -->
-
-									<div class="product-item men">
-										<div class="product discount product_filter">
-											<!-- <div class="product_image">
-												<img src="images/product_1.png" alt="">
-											</div> -->
-											<div class="favorite favorite_left"></div>
-											<!-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> -->
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.jsp">Sukla Das</a></h6>
-												<div class="product_price">5&#x2605;</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+									</div -->
 
 								</div>
 
 								<!-- Product Sorting -->
 
 								<div class="product_sorting_container product_sorting_container_bottom clearfix">
-									<ul class="product_sorting">
+									<!-- <ul class="product_sorting">
 										<li>
 											<span>Show:</span>
 											<span class="num_sorting_text">04</span>
@@ -267,9 +216,11 @@
 												<li class="num_sorting_btn"><span>04</span></li>
 											</ul>
 										</li>
-									</ul>
-									<span class="showing_results">Showing 1 to 3 of 12 results</span>
-									<div class="pages d-flex flex-row align-items-center">
+									</ul> -->
+									<%
+										out.println("<span class='showing_results'>"+ count + " artisans found.</span>");
+									%>
+									<!-- <div class="pages d-flex flex-row align-items-center">
 										<div class="page_current">
 											<span>1</span>
 											<ul class="page_selection">
@@ -280,7 +231,7 @@
 										</div>
 										<div class="page_total"><span>of</span> 3</div>
 										<div id="next_page_1" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-									</div>
+									</div> -->
 
 								</div>
 

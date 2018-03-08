@@ -29,7 +29,7 @@
 				<div class="col">
 					<div class="main_slider_content">
 						<!-- <h6>Spring / Summer Collection 2017</h6> -->
-						<h1 style="color: white">Get up to 30% Off on Bulk Orders</h1>
+						<h1 style="color: white">Handmade products from the skilled artisans</h1>
 						<div class="red_button shop_now_button"><a href="categories.jsp">shop now</a></div>
 					</div>
 				</div>
