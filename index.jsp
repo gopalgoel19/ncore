@@ -30,7 +30,7 @@
 					<div class="main_slider_content">
 						<!-- <h6>Spring / Summer Collection 2017</h6> -->
 						<h1 style="color: white">Handmade products from the skilled artisans</h1>
-						<div class="red_button shop_now_button"><a href="categories.jsp">shop now</a></div>
+						<div class="red_button shop_now_button"><a href="artisans.jsp">shop now</a></div>
 					</div>
 				</div>
 			</div>
@@ -45,21 +45,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp?category=Dokra">dokra items</a>
+							<a href="artisans.jsp?category=Dokra">dokra items</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp?category=Wodden Doll">wodden dolls</a>
+							<a href="artisans.jsp?category=Wodden Doll">wodden dolls</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.jsp?category=Patachirtra">patachirtra</a>
+							<a href="artisans.jsp?category=Patachirtra">patachirtra</a>
 						</div>
 					</div>
 				</div>
