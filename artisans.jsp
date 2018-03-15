@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Categories</title>
+<title>Artisans</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Ncore categories_styles">
@@ -45,7 +45,7 @@
 						<ul class="sidebar_categories">
 							<%
 								Statement stmt = con.createStatement();
-								String cat = request.getParameter("category");
+								String cat = request.getParameter("category"); //the category of artisans requested
 								String s = "Select * from productcategories";
 								ResultSet rs = stmt.executeQuery(s);
 								String pp = "";
@@ -53,9 +53,9 @@
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
 									if(pp.equals(cat)){
-										out.println("<li class='active'><a href='categories.jsp?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+										out.println("<li class='active'><a href='artisans.jsp?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
 									}
-									else out.println("<li><a href='categories.jsp?category="+ pp + "'>"+ pp + "</a></li>");
+									else out.println("<li><a href='artisans.jsp?category="+ pp + "'>"+ pp + "</a></li>");
 								}
 								
 							%>
@@ -74,14 +74,45 @@
 						<div class="row">
 							<div class="col">
 
+								<!-- Casousel -->
+								<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+								  <ol class="carousel-indicators">
+								    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+								  </ol>
+								  <div class="carousel-inner">
+								    <div class="carousel-item active">
+								      <img class="d-block w-100" src="images/<%out.println(cat);%>_slider_1.jpg" alt="First slide">
+								    </div>
+								    <div class="carousel-item">
+								      <img class="d-block w-100" src="images/<%out.println(cat);%>_slider_2.jpg" alt="Second slide">
+								    </div>
+								    <div class="carousel-item">
+								      <img class="d-block w-100" src="images/<%out.println(cat);%>_slider_3.jpg" alt="Third slide">
+								    </div>
+								  </div>
+								  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								    <span class="sr-only">Previous</span>
+								  </a>
+								  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+								    <span class="sr-only">Next</span>
+								  </a>
+								</div>
+								<br><br>
+
+
 								<!-- Product Sorting -->
 								<div class="sidebar_title">
-									<h5>Artisans</h5>
+									<h5><%out.println(cat);%> Artisans</h5>
 								</div>
 
 								<div class="product-grid">
 
 									<%
+										//prints the list of artisans
 										int count = 0;
 										String s2 = "SELECT DISTINCT a.ArtisanFirstName, a.ArtisanLastName, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
 										if(cat!=null){
