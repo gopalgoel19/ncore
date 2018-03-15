@@ -106,7 +106,7 @@
 
 								<!-- Product Sorting -->
 								<div class="sidebar_title">
-									<h5><%out.println(cat);%> Artisans</h5>
+									<h5><%if(cat!=null)out.println(cat);%> Artisans</h5>
 								</div>
 
 								<div class="product-grid">
