@@ -130,14 +130,14 @@
 											fname = rs2.getString("ArtisanFirstName");
 											lname = rs2.getString("ArtisanLastName");
 											category = rs2.getString("CategoryName");
-											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='favorite favorite_left'></div><div class='product_info'><h4 class='product_name'><a href=#>" + fname + " " + lname + "</a><h6>"+ category +"</h6></h4><div class='product_price' style='color:#fe4c50'>"+((int)(Math.random()*5)+1)+"&#x2605;</div></div></div><div class='red_button add_to_cart_button'><a href='#'>View Profile</a></div></div>");
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='favorite favorite_left'></div><div class='product_info'><h4 class='product_name'><a href='products.jsp?artisanFirstName="+ fname +"&artisanLastName="+ lname +"'>" + fname + " " + lname + "</a><h6>"+ category +"</h6></h4><div class='product_price' style='color:#fe4c50'>"+((int)(Math.random()*5)+1)+"&#x2605;</div></div></div><div class='red_button add_to_cart_button'><a href='#'>View Profile</a></div></div>");
 										}
 
 									%>
 
 								</div>
 
-								<!-- Product Sorting -->
+								<!-- Artisan count -->
 
 								<div class="product_sorting_container product_sorting_container_bottom clearfix">
 									<%
