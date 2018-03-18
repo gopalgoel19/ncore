@@ -43,7 +43,7 @@
 						<ul class="navbar_menu">
 							<li><a href="index.jsp">home</a></li>
 							<li><a href="index.jsp">about</a></li>
-							<li><a href="#">products</a></li>
+							<li><a href="products.jsp">products</a></li>
 							<li><a href="artisans.jsp">artisans</a></li>
 							<li><a href="contact.jsp">contact</a></li>
 						</ul>
