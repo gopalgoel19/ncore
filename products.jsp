@@ -31,7 +31,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Products</a></li>
 					</ul>
 				</div>
 
@@ -46,16 +46,18 @@
 							<%
 								Statement stmt = con.createStatement();
 								String cat = request.getParameter("category"); //the category of artisans requested
+								String artFName = request.getParameter("artisanFirstName"); //the artisan first name whose products are requested
+								String artLName = request.getParameter("artisanLastName"); //the artisans last name whose producst are requested
+								//String reqURL = request.getRequestURL(); 
 								String s = "Select * from productcategories";
 								ResultSet rs = stmt.executeQuery(s);
 								String pp = "";
-
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
 									if(pp.equals(cat)){
-										out.println("<li class='active'><a href='artisans.jsp?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+										out.println("<li class='active'><a href='"+ request.getRequestURL() +"?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
 									}
-									else out.println("<li><a href='products.jsp?category="+ pp + "'>"+ pp + "</a></li>");
+									else out.println("<li><a href='"+ request.getRequestURL() +"?category="+ pp + "'>"+ pp + "</a></li>");
 								}
 								
 							%>
@@ -71,55 +73,6 @@
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Finished</span></li>
 							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Custom Made</span></li>
 						</ul>
-					</div>
-
-					<!-- Price Range Filtering -->
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Filter by Price</h5>
-						</div>
-						<p>
-							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-						</p>
-						<div id="slider-range"></div>
-						<div class="filter_button"><span>filter</span></div>
-					</div>
-
-					<!-- Sizes -->
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Sizes</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>S</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>M</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>L</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
-						</ul>
-					</div>
-
-					<!-- Color -->
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Color</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Black</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Pink</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-						</ul>
-						<div class="show_more">
-							<span><span>+</span>Show More</span>
-						</div>
 					</div>
 
 				</div>
@@ -177,203 +130,36 @@
 
 								<div class="product-grid">
 
-									<!-- Product 1 -->
-
-									<div class="product-item men">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="images/product_1.png" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-												<div class="product_price">$520.00<span>$590.00</span></div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 2 -->
-
-									<div class="product-item women">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_2.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"><span>new</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-												<div class="product_price">$610.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 3 -->
-
-									<div class="product-item women">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_3.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 4 -->
-
-									<div class="product-item accessories">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_4.png" alt="">
-											</div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-												<div class="product_price">$410.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 5 -->
-
-									<div class="product-item women men">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_5.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-												<div class="product_price">$180.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 6 -->
-
-									<div class="product-item accessories">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="images/product_6.png" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-												<div class="product_price">$520.00<span>$590.00</span></div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 7 -->
-
-									<div class="product-item women">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_7.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-												<div class="product_price">$610.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 8 -->
-
-									<div class="product-item accessories">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_8.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 9 -->
-
-									<div class="product-item men">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_9.png" alt="">
-											</div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-												<div class="product_price">$410.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 10 -->
-
-									<div class="product-item men">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_10.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-												<div class="product_price">$180.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 11 -->
-
-									<div class="product-item women men">
-										<div class="product product_filter">
-											<div class="product_image">
-												<img src="images/product_5.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-												<div class="product_price">$180.00</div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
-
-									<!-- Product 12 -->
-
-									<div class="product-item accessories">
-										<div class="product discount product_filter">
-											<div class="product_image">
-												<img src="images/product_6.png" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-												<div class="product_price">$520.00<span>$590.00</span></div>
-											</div>
-										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-									</div>
+								<%
+									//prints the list of products
+										int count = 0;
+										String s2 = "SELECT DISTINCT p.ProductName, p.ProductPrice, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
+										if(cat!=null){
+											s2 += " AND pc.CategoryName = '" + cat + "'";
+										}
+										if(artFName!=null){
+											s2 += " AND a.ArtisanFirstName = '" + artFName + "'";
+										}
+										if(artLName!=null){
+											s2 += " AND a.ArtisanLastName = '" + artLName + "'";
+										}
+										ResultSet rs2 = stmt.executeQuery(s2);
+										ResultSetMetaData rsmd=rs2.getMetaData();
+										String fname = "";
+										String lname = "";  
+										String productName = "";
+										String productPrice = "";
+										String category = "";
+										while(rs2.next()){
+											count += 1;
+											//fname = rs2.getString("ArtisanFirstName");
+											//lname = rs2.getString("ArtisanLastName");
+											productName = rs2.getString("ProductName");
+											productPrice = rs2.getString("ProductPrice");
+											category = rs2.getString("CategoryName");
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><img src='images/product_2.png' alt=''></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='#'>Add to Cart</a></div></div>");
+										}
+								%>
 								</div>
 
 								<!-- Product Sorting -->
