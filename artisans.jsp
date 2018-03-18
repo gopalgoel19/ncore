@@ -53,9 +53,9 @@
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
 									if(pp.equals(cat)){
-										out.println("<li class='active'><a href='artisans.jsp?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+										out.println("<li class='active'><a href='"+ request.getRequestURL() +"?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
 									}
-									else out.println("<li><a href='artisans.jsp?category="+ pp + "'>"+ pp + "</a></li>");
+									else out.println("<li><a href='"+ request.getRequestURL() +"?category="+ pp + "'>"+ pp + "</a></li>");
 								}
 								
 							%>
@@ -104,11 +104,13 @@
 								<br><br>
 
 
-								<!-- Product Sorting -->
-								<div class="sidebar_title">
+								<!-- Product heading -->
+								<div class="sidebar_title"> <!-- Used sidebar_title just to get same font, etc -->
 									<h5><%if(cat!=null)out.println(cat);%> Artisans</h5>
 								</div>
 
+
+								<!-- Product Grid -->
 								<div class="product-grid">
 
 									<%
