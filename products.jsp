@@ -48,16 +48,27 @@
 								String cat = request.getParameter("category"); //the category of artisans requested
 								String artFName = request.getParameter("artisanFirstName"); //the artisan first name whose products are requested
 								String artLName = request.getParameter("artisanLastName"); //the artisans last name whose producst are requested
-								//String reqURL = request.getRequestURL(); 
 								String s = "Select * from productcategories";
+								
+								// out.println(reqURL);
+
 								ResultSet rs = stmt.executeQuery(s);
 								String pp = "";
 								while(rs.next()){
 									pp = rs.getString("CategoryName");
-									if(pp.equals(cat)){
-										out.println("<li class='active'><a href='"+ request.getRequestURL() +"?category="+ pp + "'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+									String reqURL = request.getRequestURL() + "?" + request.getQueryString();
+									if(reqURL.indexOf("category") == -1){
+										reqURL += "&category="+pp;
 									}
-									else out.println("<li><a href='"+ request.getRequestURL() +"?category="+ pp + "'>"+ pp + "</a></li>");
+									else{
+										int index = reqURL.indexOf("category");
+										reqURL = reqURL.substring(0,index-1);
+										reqURL += "&category="+pp;
+									}
+									if(pp.equals(cat)){
+										out.println("<li class='active'><a href='"+ reqURL +"'><span><i class='fa fa-angle-double-right' aria-hidden='true'></i></span>"+pp+"</a></li>");
+									}
+									else out.println("<li><a href='"+ reqURL + "'>"+ pp + "</a></li>");
 								}
 								
 							%>
@@ -87,44 +98,11 @@
 						<div class="row">
 							<div class="col">
 
-								<!-- Product Sorting -->
-
-								<div class="product_sorting_container product_sorting_container_top">
-									<ul class="product_sorting">
-										<li>
-											<span class="type_sorting_text">Default Sorting</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_type">
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default Sorting</span></li>
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Product Name</span></li>
-											</ul>
-										</li>
-										<li>
-											<span>Show</span>
-											<span class="num_sorting_text">6</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_num">
-												<li class="num_sorting_btn"><span>6</span></li>
-												<li class="num_sorting_btn"><span>12</span></li>
-												<li class="num_sorting_btn"><span>24</span></li>
-											</ul>
-										</li>
-									</ul>
-									<div class="pages d-flex flex-row align-items-center">
-										<div class="page_current">
-											<span>1</span>
-											<ul class="page_selection">
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-											</ul>
-										</div>
-										<div class="page_total"><span>of</span> 3</div>
-										<div id="next_page" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-									</div>
-
-								</div>
+								<%
+									if(request.getQueryString()!=null && request.getQueryString().indexOf("artisanFirstName")!=-1){
+										out.println("<br><div class='sidebar_title'><h5>"+ artFName + " " + artLName + " Products" + "</h5></div>");
+									}
+								%>
 
 								<!-- Product Grid -->
 
@@ -162,36 +140,12 @@
 								%>
 								</div>
 
-								<!-- Product Sorting -->
+								<!-- Products count -->
 
 								<div class="product_sorting_container product_sorting_container_bottom clearfix">
-									<ul class="product_sorting">
-										<li>
-											<span>Show:</span>
-											<span class="num_sorting_text">04</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_num">
-												<li class="num_sorting_btn"><span>01</span></li>
-												<li class="num_sorting_btn"><span>02</span></li>
-												<li class="num_sorting_btn"><span>03</span></li>
-												<li class="num_sorting_btn"><span>04</span></li>
-											</ul>
-										</li>
-									</ul>
-									<span class="showing_results">Showing 1–3 of 12 results</span>
-									<div class="pages d-flex flex-row align-items-center">
-										<div class="page_current">
-											<span>1</span>
-											<ul class="page_selection">
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-											</ul>
-										</div>
-										<div class="page_total"><span>of</span> 3</div>
-										<div id="next_page_1" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-									</div>
-
+									<%
+										out.println("<span class='showing_results'>"+ count + " products found.</span>");
+									%>
 								</div>
 
 							</div>
