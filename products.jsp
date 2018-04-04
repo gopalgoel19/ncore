@@ -111,7 +111,7 @@
 								<%
 									//prints the list of products
 										int count = 0;
-										String s2 = "SELECT DISTINCT p.ProductName, p.ProductPrice, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
+										String s2 = "SELECT DISTINCT p.ProductID, p.ProductName, p.ProductPrice, pc.CategoryName FROM products_static AS p, artisanskill AS ask, productcategories as pc, artisan AS a WHERE p.ProductCategoryID = pc.CategoryID AND p.ProductID = ask.ProductID AND ask.ArtisanID = a.ArtisanID";
 										if(cat!=null){
 											s2 += " AND pc.CategoryName = '" + cat + "'";
 										}
@@ -128,6 +128,7 @@
 										String productName = "";
 										String productPrice = "";
 										String category = "";
+										String productID = "";
 										while(rs2.next()){
 											count += 1;
 											//fname = rs2.getString("ArtisanFirstName");
@@ -135,7 +136,9 @@
 											productName = rs2.getString("ProductName");
 											productPrice = rs2.getString("ProductPrice");
 											category = rs2.getString("CategoryName");
-											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><img src='images/product_2.png' alt=''></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='#'>Add to Cart</a></div></div>");
+											productID = rs2.getString("ProductID");
+
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><img src='images/product_"+ productID +".png' alt=''></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='#'>Add to Cart</a></div></div>");
 										}
 								%>
 								</div>
