@@ -31,7 +31,7 @@
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
 						<li><a href="index.jsp">Home</a></li>
-						<li class="active"><a href="index.jsp"><i class="fa fa-angle-right" aria-hidden="true"></i>Products</a></li>
+						<li class="active"><a href="artisans.jsp"><i class="fa fa-angle-right" aria-hidden="true"></i>Artisans</a></li>
 					</ul>
 				</div>
 
