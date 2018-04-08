@@ -30,8 +30,8 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Products</a></li>
+						<li><a href="index.jsp">Home</a></li>
++						<li class="active"><a href="products.jsp"><i class="fa fa-angle-right" aria-hidden="true"></i>Products</a></li>
 					</ul>
 				</div>
 
@@ -137,8 +137,8 @@
 											productPrice = rs2.getString("ProductPrice");
 											category = rs2.getString("CategoryName");
 											productID = rs2.getString("ProductID");
-
-											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><img src='images/product_"+ productID +".png' alt=''></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href=#>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='#'>Add to Cart</a></div></div>");
+											String orderLink = "single.jsp?productId="+productID+"&artisanFirstName="+artFName+"&artisanLastName="+artLName;
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><a href='"+orderLink+"'><img src='images/product_"+ productID +".png' alt=''></a></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href='"+orderLink+"'>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='"+orderLink+"'>View Product</a></div></div>");
 										}
 								%>
 								</div>
