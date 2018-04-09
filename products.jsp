@@ -126,7 +126,7 @@
 											category = rs2.getString("CategoryName");
 											productID = rs2.getString("ProductID");
 											String orderLink = "single.jsp?type="+ type +"&productId="+productID+"&artisanFirstName="+artFName+"&artisanLastName="+artLName;
-											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><a href='"+orderLink+"'><img src='images/product_"+ productID +".png' alt=''></a></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href='"+orderLink+"'>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='"+orderLink+"'>View Product</a></div></div>");
+											out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_image'><a href='"+orderLink+"'><img src='images/product_"+ productID +".jpg' alt=''></a></div><div class='favorite favorite_left'></div><div class='product_info'><h6 class='product_name'><a href='"+orderLink+"'>" + productName + "</a></h6><div class='product_price' style='color:#fe4c50'>Rs. " + productPrice +"</div></div></div><div class='red_button add_to_cart_button'><a href='"+orderLink+"'>View Product</a></div></div>");
 										}
 								%>
 								</div>
