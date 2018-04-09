@@ -65,11 +65,11 @@
 						<!-- <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
-									<li><img src='<% out.println("images/product_" + pid + ".png"); %>' alt="" data-image='<% out.println("images/product_" + pid + ".png"); %>'></li>
-									<li class="active"><img src='<% out.println("images/product_" + pid + ".png"); %>' alt="" data-image='<% out.println("images/product_" + pid + ".png"); %>'></li>
+									<li><img src='<% out.println("images/product_" + pid + ".jpg"); %>' alt="" data-image='<% out.println("images/product_" + pid + ".jpg"); %>'></li>
+									<li class="active"><img src='<% out.println("images/product_" + pid + ".jpg"); %>' alt="" data-image='<% out.println("images/product_" + pid + ".jpg"); %>'></li>
 									<li>
-										<img src='<% out.println("images/product_" + pid + ".png"); %>' alt="" 
-											data-image='<% out.println("images/product_" + pid + ".png"); %>'>
+										<img src='<% out.println("images/product_" + pid + ".jpg"); %>' alt="" 
+											data-image='<% out.println("images/product_" + pid + ".jpg"); %>'>
 									</li>
 								</ul>
 							</div>
@@ -77,7 +77,7 @@
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
 								<!-- <div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div> -->
-								<div class="single_product_image_background" style='background-image:url(<% out.println("images/product_" + pid + ".png"); %>)'></div>
+								<div class="single_product_image_background" style='background-image:url(<% out.println("images/product_" + pid + ".jpg"); %>)'></div>
 							</div>
 						</div>
 					</div>
@@ -183,21 +183,22 @@
 					newLink();
 				}
 			});
-
+			// mogrify -resize 320x240! *.jpg
+			// mogrify -format jpg *.png
 			$('#option1').on('click', function(){
-				image.css("background-image", "url('images/single_1.jpg')");
+				image.css("background-image", "url('images/customized/"+productId+"_red.jpg')");
 				color = "red";
 				newLink();
 			});
 
 			$('#option2').on('click', function(){
-				image.css("background-image", "url('images/single_2.jpg')");
+				image.css("background-image", "url('images/customized/"+productId+"_black.jpg')");
 				color = "black";
 				newLink();
 			});
 			
 			$('#option3').on('click', function(){
-				image.css("background-image", "url('images/single_3.jpg')");
+				image.css("background-image", "url('images/customized/"+productId+"_blue.jpg')");
 				color = "blue";
 				newLink();
 			});
