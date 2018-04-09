@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
 <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="styles/single_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/single_artisans_style.css">
 <link rel="stylesheet" type="text/css" href="styles/single_responsive.css">
 </head>
 <%@include file="connect.jsp"%>
@@ -43,6 +44,7 @@
 		<%
 			Statement stmt = con.createStatement();
 			String pid = request.getParameter("productId"); //product id
+			String type = request.getParameter("type");
 			String s = "SELECT * FROM products_static WHERE ProductId = " + pid ; //Query string
 			ResultSet rs = stmt.executeQuery(s);
 			String pName = "";
@@ -54,15 +56,13 @@
 				pDesc = rs.getString("ProductLongDescription");
 			}
 			rs.close();
-			// out.println(pName + pPrice + pDesc);
 		%>
-
 
 		<div class="row">
 			<div class="col-lg-7">
 				<div class="single_product_pics">
 					<div class="row">
-						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+						<!-- <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
 									<li><img src='<% out.println("images/product_" + pid + ".png"); %>' alt="" data-image='<% out.println("images/product_" + pid + ".png"); %>'></li>
@@ -73,7 +73,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
 								<!-- <div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div> -->
@@ -90,7 +90,7 @@
 						<p><% out.println(pDesc); %></p>
 					</div>
 					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-						<span class="ti-truck"></span><span>free delivery</span>
+						<span class="ti-truck"></span><span>On time delivery</span>
 					</div>
 					<div class="original_price"></div>
 					<div class="product_price">Rs. <% out.println(pPrice); %></div>
@@ -101,14 +101,11 @@
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 					</ul>
-					<div class="product_color">
-						<span>Select Color:</span>
-						<ul>
-							<li style="background: #e54e5d"></li>
-							<li style="background: #252525"></li>
-							<li style="background: #60b3f3"></li>
-						</ul>
-					</div>
+					<% // shows the color option only if the 'type' key has a value 'customized'
+						if(type!=null && type.equals("customized")){
+							out.println("<div class='product_color'><span>Select Color:</span><ul><li style='background: #e54e5d' id='option1'></li><li style='background: #252525' id='option2'></li><li style='background: #60b3f3' id='option3'></li></ul></div>");
+						}
+					%>
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity:</span>
 						<div class="quantity_selector">
@@ -116,56 +113,33 @@
 							<span id="quantity_value">1</span>
 							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
 						</div>
+						<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1&productId=<%= pid %>">add to cart</a></div>
 						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
 					</div>
 					<br>
-					<div class="product_section flex-row">
-						<%
-							String artFName = request.getParameter("artisanFirstName");
-							String artLName = request.getParameter("artisanLastName"); 
-							String productId = request.getParameter("productId");
-							boolean allocationNeeded = false;
-							if(artFName.equals("null") && artLName.equals("null")){
-								allocationNeeded = true;
-							}
-							// we store data in context variable and later extract it in javascript
-							String context = productId+";"+artFName+";"+artLName;
-							if(allocationNeeded){
-								context = productId;
-								// out.println("<div class='flex-row'>Allocation Needed</div><br>");
-							}
-							else{
-								// out.println("<div class='flex-row'>No allocation needed. You have selected "+artFName+artLName+"</div><br>");
-							}
-						%>
-					</div>
-
-					<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1&productId=<%= pid %>">add to cart</a></div>
-
 				</div>
 			</div>
 		</div>
-		<br><br>
-		<div class="row">
-			<div class="col"> 
+		<br><br><hr><br>
+		<h3>Artisans</h3>
+
+		<!-- Product Grid -->
+		<div class="product-grid" style="margin-top: 0px;">
+
 			<%
-				// we have productID
+				//prints the list of artisans
 				Statement stmt2 = con.createStatement();
 				s = "SELECT A.ArtisanFirstName,A.ArtisanLastName FROM artisan as A,artisanskill as ASS WHERE ASS.ProductID = " + pid + " AND A.ArtisanID = ASS.ArtisanID"; //Query string
 				ResultSet rss = stmt2.executeQuery(s);
-				String FirstName = "";
-				String LastName = "";
+				String fname = "";
+				String lname = "";
 				while(rss.next()){
-					FirstName = rss.getString("ArtisanFirstName");
-					LastName = rss.getString("ArtisanLastName");
-					out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_info'><div class='artisan-list'><h5 class='product_name'>" + FirstName + " " + LastName + "</h5></div></div></div></div>");					
-					// out.println("<div class='row'>"+FirstName+LastName+"</div>");
+					fname = rss.getString("ArtisanFirstName");
+					lname = rss.getString("ArtisanLastName");
+					out.println("<div class='product-item men'><div class='product discount product_filter'><div class='product_info'><div class='artisan-list'><h5 class='product_name'><a href=''>" + fname + " " + lname + "</a></h5></div><div class='artisan-list'><div class='product_price' style='margin-top: 25px;color:#fe4c50'>"+ ((int)(Math.random()*5)+1) +" &#x2605;</div></div></div></div></div>");
 				}
-
-
-
 			%>
-			</div>
+
 		</div>
 
 	</div>
@@ -186,28 +160,46 @@
 			var plus = $('.plus');
 			var minus = $('.minus');
 			var value = $('#quantity_value');
+			var image = $('.single_product_image_background');
+			var color = "null";
 			function newLink(){
 				console.log('call kiya bro');
 				quantity = parseInt(value.text());
-				var link = "orderDescription.jsp?quantity="+quantity+"&productId="+productId;
+				var link = "orderDescription.jsp?quantity=" + quantity + "&productId=" + productId + "&color=" + color;
 				$("#link").attr("href", link);
 			}
 
-			plus.on('click', function()
-			{
+			plus.on('click', function(){
 				var x = parseInt(value.text());
 				value.text(x + 1);
 				newLink();
 			});
 
-			minus.on('click', function()
-			{
+			minus.on('click', function(){
 				var x = parseInt(value.text());
 				if(x > 1)
 				{
 					value.text(x - 1);
 					newLink();
 				}
+			});
+
+			$('#option1').on('click', function(){
+				image.css("background-image", "url('images/single_1.jpg')");
+				color = "red";
+				newLink();
+			});
+
+			$('#option2').on('click', function(){
+				image.css("background-image", "url('images/single_2.jpg')");
+				color = "black";
+				newLink();
+			});
+			
+			$('#option3').on('click', function(){
+				image.css("background-image", "url('images/single_3.jpg')");
+				color = "blue";
+				newLink();
 			});
         });
 </script>
