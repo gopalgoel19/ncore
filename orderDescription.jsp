@@ -26,6 +26,7 @@
 		<%
 			String quantity = request.getParameter("quantity");
 			String productId = request.getParameter("productId");
+			String color = request.getParameter("color");
 			Statement stmt = con.createStatement();
 			String query = "SELECT ProductName FROM products_static WHERE ProductId = " + productId ; //Query string
 			ResultSet rs = stmt.executeQuery(query);
@@ -39,6 +40,10 @@
 			<div class="form-group">
 				<label for="quantity">Quantity</label>
 				<input class="form-control" type="text" name="quantity" id="quantity" value="<%= quantity%>" readonly>
+			</div>
+			<div class="form-group">
+				<label for="color">Color</label>
+				<input class="form-control" type="text" name="color" id="color" value="<%= color%>" readonly>
 			</div>
 			<input type="hidden" name="productId" value="<%= productId%>">
 			<div class="form-group">

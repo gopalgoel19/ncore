@@ -37,6 +37,7 @@
 		<%
 			String quantity = request.getParameter("quantity");
 			String productId = request.getParameter("productId");
+            String color = request.getParameter("color");
             String allocation = request.getParameter("allocation");
 		%>
         <div class="container">
