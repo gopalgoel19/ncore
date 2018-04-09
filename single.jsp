@@ -140,7 +140,7 @@
 						%>
 					</div>
 
-					<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1">add to cart</a></div>
+					<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1&productId=<%= pid %>">add to cart</a></div>
 
 				</div>
 			</div>
@@ -178,13 +178,18 @@
 <script type="text/javascript">
     $(document).ready(function() {
 			var quatity = 1;
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var productId = url.searchParams.get("productId");
+			console.log(productId);
 			// we will have other stuff
 			var plus = $('.plus');
 			var minus = $('.minus');
 			var value = $('#quantity_value');
 			function newLink(){
+				console.log('call kiya bro');
 				quantity = parseInt(value.text());
-				var link = "orderDescription.jsp?quantity="+quantity;
+				var link = "orderDescription.jsp?quantity="+quantity+"&productId="+productId;
 				$("#link").attr("href", link);
 			}
 
