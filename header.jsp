@@ -43,8 +43,24 @@
 						<ul class="navbar_menu">
 							<li><a href="index.jsp">home</a></li>
 							<li><a href="index.jsp">about</a></li>
-							<li><a href="products.jsp">products</a></li>
-							<li><a href="artisans.jsp">artisans</a></li>
+							<li class="account" style="padding: 20px; background: white;">
+								<a href="#" style="padding: 0px;">
+									Place Order
+								</a>
+								<ul class="account_selection" style="width: 170%;">
+									<li><a href="#" style="padding: 5px;">Finished Product</a></li>
+									<li><a href="products.jsp?type=customized" style="padding: 5px;">Customized Product</a></li>
+								</ul>
+							</li>
+							<li class="account" style="padding: 20px; background: white;">
+								<a href="#" style="padding: 0px;">
+									Browse
+								</a>
+								<ul class="account_selection" style="width: 170%;">
+									<li><a href="products.jsp" style="padding: 5px;">Products</a></li>
+									<li><a href="artisans.jsp" style="padding: 5px;">Artisans</a></li>
+								</ul>
+							</li>
 							<li><a href="contact.jsp">contact</a></li>
 						</ul>
 						<ul class="navbar_user">
