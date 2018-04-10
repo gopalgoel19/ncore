@@ -185,7 +185,7 @@
 			// mogrify -resize 320x240! *.jpg
 			// mogrify -format jpg *.png
 			$('#option1').on('click', function(){
-				image.css("background-image", "url('images/customized/"+productId+"_red.jpg')");
+				image.css("background-image", "url('images/product_" + productId + ".jpg')");
 				color = "red";
 				newLink();
 			});
