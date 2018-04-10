@@ -101,7 +101,7 @@
 						<li><i class="fa fa-star" aria-hidden="true"></i></li>
 						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 					</ul>
-					<% // shows the color option only if the 'type' key has a value 'customized'
+					<% // shows the color option only if the 'type' key has a value 'Customized'
 						if(type!=null && type.equals("Customized")){
 							out.println("<div class='product_color'><span>Select Color:</span><ul><li style='background: #e54e5d' id='option1'></li><li style='background: #252525' id='option2'></li><li style='background: #60b3f3' id='option3'></li></ul></div>");
 						}
@@ -185,7 +185,7 @@
 			// mogrify -resize 320x240! *.jpg
 			// mogrify -format jpg *.png
 			$('#option1').on('click', function(){
-				image.css("background-image", "url('images/customized/"+productId+"_red.jpg')");
+				image.css("background-image", "url('images/product_" + productId + ".jpg')");
 				color = "red";
 				newLink();
 			});
