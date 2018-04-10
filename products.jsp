@@ -88,12 +88,18 @@
 
 								<%
 									if(request.getQueryString()!=null && request.getQueryString().indexOf("artisanFirstName")!=-1){
-										out.println("<br><div class='sidebar_title'><h5>"+ artFName + " " + artLName + " Products" + "</h5></div>");
+										out.println("<br><div class='sidebar_title'><h3>"+ artFName + " " + artLName + " Products" + "</h3></div>");
 									}
 								%>
 
 								<!-- Product Grid -->
-								<h3><%= type %> Products</h3>
+								<%
+									if(type!=null){
+								%>
+										<h3><%= type %> Products</h3>
+								<%
+									} 
+								%>
 								<div class="product-grid">
 
 								<%

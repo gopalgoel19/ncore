@@ -51,9 +51,16 @@
 						Product Name<input id="input_name" class="form_input input_name input_ph" type="text" name="product name" placeholder="Product Name" required="required" data-error="Name is required." id="pName" placeholder="<%= pName%>" value="<%= pName%>" readonly style="margin-top: 0px;">
 						Quantity<input id="input_email" class="form_input input_email input_ph" type="text" name="quantity" placeholder="Quantity" required="required" data-error="Valid email is required." id="quantity" value="<%= quantity%>" readonly>
 						Total Amount<input id="input_website" class="form_input input_website input_ph" type="text" name="color" placeholder="Color" required="required" data-error="Name is required." id="color" value="Rs. <%= totalPrice %>" readonly>
+						<%
+							if(color!=null){
+						%>
 						Color<input id="input_website" class="form_input input_website input_ph" type="text" name="color" placeholder="Color" required="required" data-error="Name is required." id="color" value="<%= color%>" readonly>
+						<%
+							}
+						%>
+
 						Artisan
-						<select id="input_website" class="form_input input_website input_ph" type="" name="color" placeholder="Select Artisan" required="required" data-error="Name is required." id="color" value="<%= color%>" readonly>
+						<select id="input_website" class="form_input input_website input_ph" type="" name="allocation" placeholder="Select Artisan" required="required" data-error="Name is required." id="color" value="<%= color%>" readonly>
 								<option>Automatic</option>
 			<%
 				// we have productID
@@ -66,7 +73,7 @@
 					LastName = rss.getString("ArtisanLastName");
 					ArtisanID = rss.getString("ArtisanID");
 					String html = "<div class='form-check'><input class='form-check-input' type='radio' name='allocation' id='allocation' value='"+ArtisanID+"'><label class='form-check-label' for='allocation'>"+FirstName+LastName+"</label></div>";
-					String html2 = "<option>"+FirstName+" "+LastName+"</option>";
+					String html2 = "<option value='"+ArtisanID+"'>"+FirstName+" "+LastName+"</option>";
 					//String html = "<div class='row'><input type='radio' name='allocation' value='"+ArtisanID+"'>"+FirstName+LastName+"</input></div>";
 					out.println(html2);
 				}
