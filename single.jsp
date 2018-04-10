@@ -102,7 +102,7 @@
 						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 					</ul>
 					<% // shows the color option only if the 'type' key has a value 'customized'
-						if(type!=null && type.equals("customized")){
+						if(type!=null && type.equals("Customized")){
 							out.println("<div class='product_color'><span>Select Color:</span><ul><li style='background: #e54e5d' id='option1'></li><li style='background: #252525' id='option2'></li><li style='background: #60b3f3' id='option3'></li></ul></div>");
 						}
 					%>

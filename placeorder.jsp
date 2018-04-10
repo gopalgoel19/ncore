@@ -42,7 +42,7 @@
 		%>
         <div class="container">
         <br><br>
-            <button type="button" class="btn btn-success">Click to navigate to payment portal</button>
+            <button type="button" class="btn btn-success">Proceed to Payment</button>
         <div>
 	</div>
 	<%@include file="benefit.jsp"%>

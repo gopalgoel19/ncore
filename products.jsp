@@ -93,7 +93,7 @@
 								%>
 
 								<!-- Product Grid -->
-
+								<h3><%= type %> Products</h3>
 								<div class="product-grid">
 
 								<%
