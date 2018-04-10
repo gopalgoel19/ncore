@@ -15,6 +15,8 @@
 <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="styles/single_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/single_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 </head>
 <%@include file="connect.jsp"%>
 <body>
@@ -36,6 +38,26 @@
 			}
 			rs.close();
 		%>
+		<br>
+		<div class="col-lg-6 get_in_touch_col">
+			<div class="get_in_touch_contents">
+				<h1>Order Description</h1>
+				<p>Check and confirm your order details below</p>
+				<form action="post">
+					<div>
+						<input id="input_name" class="form_input input_name input_ph" type="text" name="product name" placeholder="Product Name" required="required" data-error="Name is required." readonly>
+						<input id="input_email" class="form_input input_email input_ph" type="email" name="quantity" placeholder="Quantity" required="required" data-error="Valid email is required.">
+						<input id="input_website" class="form_input input_website input_ph" type="url" name="color" placeholder="Color" required="required" data-error="Name is required." readonly>
+						<!-- <textarea id="input_message" class="input_ph input_message" name="message"  placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea> -->
+					</div>
+					<div>
+						<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">Place Order</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<br>
 		<form action="placeorder.jsp" method="post">
 			<div class="form-group">
 				<label for="quantity">Quantity</label>

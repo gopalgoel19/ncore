@@ -113,8 +113,7 @@
 							<span id="quantity_value">1</span>
 							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
 						</div>
-						<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1&productId=<%= pid %>">add to cart</a></div>
-						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+						<div id="placeOrderButton" class="red_button add_to_cart_button"><a id="link" href="orderDescription.jsp?quantity=1&productId=<%= pid %>">Proceed to Cart</a></div>
 					</div>
 					<br>
 				</div>
