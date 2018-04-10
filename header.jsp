@@ -48,8 +48,8 @@
 									Place Order
 								</a>
 								<ul class="account_selection" style="width: 170%;">
-									<li><a href="#" style="padding: 5px;">Finished Product</a></li>
-									<li><a href="products.jsp?type=customized" style="padding: 5px;">Customized Product</a></li>
+									<li><a href="products.jsp?type=Finished" style="padding: 5px;">Finished Product</a></li>
+									<li><a href="products.jsp?type=Customized" style="padding: 5px;">Customized Product</a></li>
 								</ul>
 							</li>
 							<li class="account" style="padding: 20px; background: white;">
