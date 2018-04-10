@@ -69,8 +69,8 @@
 							<li class="checkout">
 								<a href="#">
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-									<span id="checkout_items" class="checkout_items">2</span>
-								</a>
+<!-- 									<span id="checkout_items" class="checkout_items">2</span>
+ -->								</a>
 							</li>
 						</ul>
 						<div class="hamburger_container">
