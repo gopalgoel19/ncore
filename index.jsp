@@ -29,7 +29,7 @@
 				<div class="col">
 					<div class="main_slider_content">
 						<!-- <h6>Spring / Summer Collection 2017</h6> -->
-						<h1 style="color: white">Handmade products from the skilled artisans</h1>
+						<h1 style="color: white">Handmade products from skilled artisans</h1>
 						<div class="red_button shop_now_button"><a href="artisans.jsp">shop now</a></div>
 					</div>
 				</div>
@@ -52,7 +52,7 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="artisans.jsp?category=Wodden Doll">wodden dolls</a>
+							<a href="artisans.jsp?category=Wodden Doll">wooden dolls</a>
 						</div>
 					</div>
 				</div>
