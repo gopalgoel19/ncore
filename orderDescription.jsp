@@ -48,9 +48,10 @@
 				<p>Check and confirm your order details below</p>
 				<form action="placeorder.jsp" method="post">
 					<div style="margin-top: 20px;">
-						Product Name<input id="input_name" class="form_input input_name input_ph" type="text" name="product name" placeholder="Product Name" required="required" data-error="Name is required." id="pName" placeholder="<%= pName%>" value="<%= pName%>" readonly style="margin-top: 0px;">
+						<input type="hidden" name="productId" value="<%= productId%>">
+						Product Name<input id="input_name" class="form_input input_name input_ph" type="text" name="pname" placeholder="Product Name" required="required" data-error="Name is required." id="pName" placeholder="<%= pName%>" value="<%= pName%>" readonly style="margin-top: 0px;">
 						Quantity<input id="input_email" class="form_input input_email input_ph" type="text" name="quantity" placeholder="Quantity" required="required" data-error="Valid email is required." id="quantity" value="<%= quantity%>" readonly>
-						Total Amount<input id="input_website" class="form_input input_website input_ph" type="text" name="color" placeholder="Color" required="required" data-error="Name is required." id="color" value="Rs. <%= totalPrice %>" readonly>
+						Total Amount (Rs.)<input id="input_website" class="form_input input_website input_ph" type="text" name="price" placeholder="Color" required="required" data-error="Name is required." id="color" value="<%= totalPrice %>" readonly>
 						<%
 							if(color!=null){
 						%>
@@ -61,7 +62,7 @@
 
 						Artisan
 						<select id="input_website" class="form_input input_website input_ph" type="" name="allocation" placeholder="Select Artisan" required="required" data-error="Name is required." id="color" value="<%= color%>" readonly>
-								<option>Automatic</option>
+								<option value='0'>Automatic</option>
 			<%
 				// we have productID
 				Statement stmt2 = con.createStatement();
